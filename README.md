@@ -19,7 +19,7 @@ https://www.youtube.com/watch?v=ZTDMWTITeCo
 
 ```bash
 # may require: sudo apt-get install ffmpeg
-ffmpeg -i ../GP010036.MP4 -ss 05:15 -t 00:00:05 -vf "crop=in_w:in_h-384:0:0,fps=3" -qscale:v 1 images/frame%05d.jpg
+ffmpeg -i ../GP010036.MP4 -ss 05:15 -t 00:00:05 -vf "crop=in_w:in_h-384:0:0,fps=4" -qscale:v 1 images/frame%05d.jpg
 ```
 
 
