@@ -18,6 +18,7 @@ https://www.youtube.com/watch?v=ZTDMWTITeCo
 3. Extract frames and crop the bottoms.
 
 ```bash
+# may require: sudo apt-get install ffmpeg
 ffmpeg -i ../GP010036.MP4 -ss 05:15 -t 00:00:05 -vf "crop=in_w:in_h-384:0:0,fps=3" -qscale:v 1 images/frame%05d.jpg
 ```
 
@@ -26,23 +27,25 @@ ffmpeg -i ../GP010036.MP4 -ss 05:15 -t 00:00:05 -vf "crop=in_w:in_h-384:0:0,fps=
 
 ```bash
 # may require: sudo apt-get install docker
-docker run -it --rm -v "$(pwd)/images:/code/images" -v "$(pwd)/ortho:/code/odm_orthophoto" -v "$(pwd)/textures:/code/odm_texturing" opendronemap/odm
+time docker run -it --rm -v "$(pwd)/images:/code/images" -v "$(pwd)/ortho:/code/odm_orthophoto" -v "$(pwd)/textures:/code/odm_texturing" opendronemap/odm
 ```
 
 
 
 5. Install meshlab
 ```bash
-sudo apt-get install meshlab
+#may require: sudo apt-get install meshlab
 meshlab
+> import mesh
 ```
 
 
-6. Your Turn!
+6. Now what?
 
 - How do we make better meshes? 
 - How can we combine them?
-- [Camera Calibration|https://github.com/OpenDroneMap/CameraCalibration.git]
+- https://github.com/OpenDroneMap/CameraCalibration.git
+
 
 
 
