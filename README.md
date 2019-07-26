@@ -19,7 +19,7 @@ GP020036.MP4  00:42 - 01:12
 3. Extract frames and crop the bottoms (the camera is in the way)
 ```bash
 cd 
-ffmpeg -i ../GP020036.MP4 -ss 00:42 -t 00:00:10 -vf "crop=in_w:in_h-384:0:0,fps=3" -qscale:v 1 images/frame%05d.jpg
+ffmpeg -i ../GP010036.MP4 -ss 05:15 -t 00:00:05 -vf "crop=in_w:in_h-384:0:0,fps=6" -qscale:v 1 images/frame%05d.jpg
 ```
 
 
