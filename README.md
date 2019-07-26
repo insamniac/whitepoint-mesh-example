@@ -12,12 +12,13 @@ cd example1
 2. Find a section of video we want to use
 
 GP010036.MP4  05:15 - 05:20
+https://www.youtube.com/watch?v=ZTDMWTITeCo
 
 
+3. Extract frames and crop the bottoms.
 
-3. Extract frames and crop the bottoms (the camera is in the way)
-    | (this can be skipped if you want to use the supplied images)
 ```bash
+# may require: sudo apt-get install ffmpeg
 ffmpeg -i ../GP010036.MP4 -ss 05:15 -t 00:00:05 -vf "crop=in_w:in_h-384:0:0,fps=6" -qscale:v 1 images/frame%05d.jpg
 ```
 
@@ -25,6 +26,7 @@ ffmpeg -i ../GP010036.MP4 -ss 05:15 -t 00:00:05 -vf "crop=in_w:in_h-384:0:0,fps=
 4. Run ODM!
 
 ```bash
+# may require: sudo apt-get install docker
 docker run -it --rm -v "$(pwd)/images:/code/images" -v "$(pwd)/ortho:/code/odm_orthophoto" -v "$(pwd)/textures:/code/odm_texturing" opendronemap/odm
 ```
 
